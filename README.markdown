@@ -47,7 +47,9 @@ feed.add_entry(
   :media_thumbnail_url => 'http://mysite.com/thumbnails/1.jpg',
   :media_thumbnail_width => 100,
   :media_thumbnail_height => 100,
-  :media_thumbnail_time => '00:00:00.000'
+  :media_thumbnail_time => '00:00:00.000',
+
+  :category => ['Economy','Jobs']
   )
 
 puts feed.make(:indent => 2)
@@ -84,6 +86,8 @@ Output:
     <link type="image/png" rel="enclosure" length="6227" title="photo" href="http://mysite.com/image.png"/>
     <media:thumbnail url="http://mysite.com/thumbnails/1.jpg" height="100" time="00:00:00.000" width="100"/>
     <link type="text/html" rel="via" title="Look at this photo" href="http://anotherblog.com/posts/999"/>
+    <category>Economy</category>
+    <category>Jobs</category>
   </entry>
 </feed>
 ```

@@ -52,6 +52,12 @@ module TinyAtom
             xm.summary(e[:summary])  if e[:summary]
             xm.content(e[:content])  if e[:content]
 
+            if e[:category] && e[:category].is_a?(Array)
+              e[:category].each do |category|
+                xm.category(category)
+              end
+            end
+
             (e[:authors] || [e]).each { |h| TinyAtom::author xm, h }
             (e[:enclosures] || [e]).each { |h| TinyAtom::enclosure xm, h }
             (e[:media_thumbnails] || [e]).each do |h|
